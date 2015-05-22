@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="Daniel Winzen">
+    <link rel="stylesheet" type="text/css" href="site.css">
+  </head>
+  <body>
+    <div id="banner">
+      <center><h2>LE Chat-PHP</h2></center>
+    </div>
+    <ul id="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="le-chat-php.html">LE Chat-PHP</a></li>
+      <li><a href="about.html">About me</a></li>
+      <li><iframe data-aa='8544' src='//ad.a-ads.com/8544?size=160x90' scrolling='no' style='width:160px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe></li>
+    </ul>
+    <div id="content">
+      <h3>General Information:</h3>
+      <p>This is a PHP Chat based on LE CHAT v.1.14. An up-to-date copy of this script can be downloaded <a href="https://github.com/DanWin/le-chat-php">here</a><br>
+      The original perl LE CHAT script by Lucky Eddie can be downloaded at <a href="http://4fvfamdpoulu2nms.onion/lechat/">his site</a> or via a tor2web proxy like <a href="https://4fvfamdpoulu2nms.tor2web.blutmagie.de/lechat/">this one</a> if you don't have TOR installed.<br>
+      If you add your own cool features or have a feature request, please tell me and I will add them, if I like them.<br>
+      Please also let me know about any bugs you find in the code, so I can fix them.<br>
+      Now a piece of information about the origin of the name "LE CHAT" copied from the original script:<br>
+      The "LE" in the name you can take as  "Lucky Eddie", or since the script was meant to be lean and easy on server resources, as "Light Edition".<br>
+      It may even be the French word for "the" if you prefer. Translated from French to English, "le chat" means: "the cat".</p>
+
+      <h3>Features:</h3>
+
+      <ul>
+        <li>Optimized for TOR</li>
+        <li>No JavaScript</li>
+        <li>Cookies supported, but not needed</li>
+        <li>Captcha</li>
+        <li>Multiple languages</li>
+        <li>Members and guests</li>
+        <li>Waiting room for guests</li>
+        <li>Moderatoral approval of new guests</li>
+        <li>Public, member, moderator and admin only chats</li>
+        <li>Private messages</li>
+        <li>Multi-line messages</li>
+        <li>Change font, colour and refresh rate in profile settings</li>
+        <li>Autologout when inactive for some time</li>
+        <li>Image embedding</li>
+        <li>Notes for admins and moderators</li>
+        <li>Clone the chat to have multiple tabs</li>
+        <li>Kick chatters</li>
+        <li>Clean selected messages</li>
+        <li>Clean the whole room</li>
+        <li>Plain text message filter</li>
+        <li>Regex message filter</li>
+        <li>And more</li>
+      </ul>
+
+      <h3>Installation Instructions:</h3>
+
+      <p>You'll need to have mysql, php and a web-server installed. For the captcha feature, you also need php5-gd.<br>
+      When you have everything installed, you'll have to create a database and a user for the chat in mysql.<br>
+      Then edit the configuration at the bottom of the script to reflect the appropriate database settings and to modify the chat settings the way you like them.<br>
+      Then copy the script to your web-server directory and call the script in your browser with a parameter like this:<br>
+      &nbsp; http://(server)/(script-name).php?action=setup<br>
+      Now you can create the Superadmin account. With this account you can administer the chat and add new members and set the guest access.<br>
+      As soon as you are done with the setup, all necessary database tables will be created and the chat can be used.<br>
+      Note: If you updated the script, please visit http://(server)/(script-name).php?action=setup again, to make sure, that any database changes are applied and no errors occure.</p>
+
+      <h3>Translating:</h3>
+
+      <p>Copy lang_en.php and rename it to lang_YOUR_LANGCODE.php<br>
+      Then edit the file and translate the messages into your language.<br>
+      If you ever use a ' character, you have to escape it by using \' instead or the script will fail.<br>
+      When you are done, you have to edit the chat script, to include your translation. Simply add a line with<br>
+      &nbsp; 'lang_code' => 'Language name',<br>
+      to the $L array in the load_lang() function at the bottom, similar to what I did for the German translation.<br>
+      Please share your translation with me, so I can add it to the official version.</p>
+
+      <h3>Regex:</h3>
+
+      <p>Yes, the chat supports regular expression filtering of messages. As regex tends to be difficult for most people, I decided to give it an extra section here.<br>
+      Regex is very powerful and can be used to filter messages that contain certain expressions and replace them with something else.<br>
+      It can be used e.g. to turn BB Code into html, so it is possible to use BB Code in the chat to format messages.<br>
+      To do this, use this Regex-Match '\[(u|b)\](.*?)\[\/\1\]' and this Regex-Replace '<$1>$2</$1>' and your text will be '[b]bold[/b]' or '[u]underlined[/u]'.<br>
+      You can also use smilies by using this Regex-Match '(?-i::(cry|eek|lol|sad|smile|surprised|wink):)' and this Regex-Replace '&lt;img src="/pictures/$1.gif" alt=":$1:"&gt;'<br>
+      And now if you enter ':smile:' an image with the smiley will be loaded from your server at '/pictures/smile.gif'.<br>
+      The following should be escaped by putting '\' in front of it, if you are trying to match one of these characters '/ \ ^ . $ | ( ) [ ] * + ? { } ,'.<br>
+      I used '/' as delimiter, so you will have to escape that, too. The only options I used is 'i' to make the regex case insensitive.<br>
+      If you want to test your regex, before applying you can use <a href="http://www.phpliveregex.com/">this site</a> and enter your Regex and Replacement there and click on preg_replace.<br>
+      If you never used regex before, check out <a href="http://docs.activestate.com/komodo/4.4/regex-intro.html">this starting guide</a> to begin with regular expressions.</p>
+
+      <h3>Live demo:</h3>
+
+      <p>If you want to see the script in action, you can visit my <a href="http://tt3j2x4k5ycaa5zt.onion/chat.php">TOR hidden service</a> or via a tor2web proxy like <a href="http://tt3j2x4k5ycaa5zt.tor2web.blutmagie.de/chat.php">this one</a> if you don't have TOR installed.<br>
+      Considering this is a hidden service, you should be prepared for the worst case, as people often tend to do illegal activities in the TOR network. I'm not online 24/7 so it might not be possible to remove such content right away.<br>
+      If you should see illegal content, don't panic. Use the contact form on my site to notify me and clean your browser cache afterwards. I will remove the content as soon as possible.</p>
+    </div>
+    <div id="footer">
+      <center>Donate via PayPal: d@winzen4.de or Bitcoin: <a href="bitcoin:1CHvjeMJum2Zfd3JEdb35RUEdz1jjQvdPT">1CHvjeMJum2Zfd3JEdb35RUEdz1jjQvdPT</a></center>
+    </div>
+  </body>
+</html>
