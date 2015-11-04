@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="banner">
-      <center><h2>LE Chat-PHP</h2></center>
+      <h2>LE Chat-PHP</h2>
     </div>
     <ul id="nav">
       <li><a href="index.html">Home</a></li>
@@ -19,7 +19,7 @@
     <div id="content">
       <h3>General Information:</h3>
       <p>This is a PHP Chat based on LE CHAT v.1.14. An up-to-date copy of this script can be downloaded <a href="https://github.com/DanWin/le-chat-php">here</a><br>
-      The original perl LE CHAT script by Lucky Eddie can be downloaded at <a href="http://4fvfamdpoulu2nms.onion/lechat/">his site</a> or via a tor2web proxy like <a href="https://4fvfamdpoulu2nms.tor2web.blutmagie.de/lechat/">this one</a> if you don't have TOR installed.<br>
+      The original perl LE CHAT script by Lucky Eddie can be downloaded at <a href="http://4fvfamdpoulu2nms.onion/lechat/">his site</a> or via a tor2web proxy like <a href="https://4fvfamdpoulu2nms.onion.to/lechat/">this one</a> if you don't have TOR installed.<br>
       If you add your own cool features or have a feature request, please tell me and I will add them, if I like them.<br>
       Please also let me know about any bugs you find in the code, so I can fix them.<br>
       Now a piece of information about the origin of the name "LE CHAT" copied from the original script:<br>
@@ -30,7 +30,7 @@
 
       <ul>
         <li>Optimized for TOR</li>
-        <li>No JavaScript</li>
+        <li>No JavaScript needed</li>
         <li>Cookies supported, but not needed</li>
         <li>Captcha</li>
         <li>Multiple languages</li>
@@ -56,6 +56,7 @@
       <h3>Installation Instructions:</h3>
 
       <p>You'll need to have mysql, php and a web-server installed. For the captcha feature, you also need php5-gd.<br>
+      If you want to make the script even faster, install a memcached server and php5-memcached and change the configuaration to use memcached. This will lessen the database load.<br>
       When you have everything installed, you'll have to create a database and a user for the chat in mysql.<br>
       Then edit the configuration at the bottom of the script to reflect the appropriate database settings and to modify the chat settings the way you like them.<br>
       Then copy the script to your web-server directory and call the script in your browser with a parameter like this:<br>
@@ -67,7 +68,7 @@
       <h3>Translating:</h3>
 
       <p>Copy lang_en.php and rename it to lang_YOUR_LANGCODE.php<br>
-      Then edit the file and translate the messages into your language.<br>
+      Then edit the file and translate the messages into your language and change $I to $T at the top.<br>
       If you ever use a ' character, you have to escape it by using \' instead or the script will fail.<br>
       When you are done, you have to edit the chat script, to include your translation. Simply add a line with<br>
       &nbsp; 'lang_code' => 'Language name',<br>
@@ -89,12 +90,12 @@
 
       <h3>Live demo:</h3>
 
-      <p>If you want to see the script in action, you can visit my <a href="http://tt3j2x4k5ycaa5zt.onion/chat.php">TOR hidden service</a> or via a tor2web proxy like <a href="http://tt3j2x4k5ycaa5zt.tor2web.blutmagie.de/chat.php">this one</a> if you don't have TOR installed.<br>
+      <p>If you want to see the script in action, you can visit my <a href="http://tt3j2x4k5ycaa5zt.onion/chat.php">TOR hidden service</a> or via a tor2web proxy like <a href="http://tt3j2x4k5ycaa5zt.onion.to/chat.php">this one</a> if you don't have TOR installed.<br>
       Considering this is a hidden service, you should be prepared for the worst case, as people often tend to do illegal activities in the TOR network. I'm not online 24/7 so it might not be possible to remove such content right away.<br>
       If you should see illegal content, don't panic. Use the contact form on my site to notify me and clean your browser cache afterwards. I will remove the content as soon as possible.</p>
     </div>
     <div id="footer">
-      <center>Donate via PayPal: d@winzen4.de or Bitcoin: <a href="bitcoin:1CHvjeMJum2Zfd3JEdb35RUEdz1jjQvdPT">1CHvjeMJum2Zfd3JEdb35RUEdz1jjQvdPT</a></center>
+      Donate via PayPal: d@winzen4.de or Bitcoin: <a href="bitcoin:1CHvjeMJum2Zfd3JEdb35RUEdz1jjQvdPT">1CHvjeMJum2Zfd3JEdb35RUEdz1jjQvdPT</a>
     </div>
   </body>
 </html>
