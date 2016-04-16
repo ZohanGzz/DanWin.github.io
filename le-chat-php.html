@@ -14,7 +14,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="le-chat-php.html">LE Chat-PHP</a></li>
       <li><a href="about.html">About me</a></li>
-      <li><iframe data-aa='8544' src='//ad.a-ads.com/8544?size=160x90' scrolling='no' style='width:160px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe></li>
+      <li><iframe data-aa="8544" src="//ad.a-ads.com/8544?size=160x90" id="a-ad" allowtransparency="true"></iframe></li>
     </ul>
     <div id="content">
       <h3>General Information:</h3>
@@ -55,9 +55,17 @@
 
       <h3>Installation Instructions:</h3>
 
-      <p>You'll need to have mysql, php and a web-server installed. For the captcha feature, you also need php5-gd.<br>
-      If you want to make the script even faster, install a memcached server and php5-memcached and change the configuaration to use memcached. This will lessen the database load.<br>
-      When you have everything installed, you'll have to create a database and a user for the chat in mysql.<br>
+      <p>You'll need to have php with pdo, pcre and date extension and a web-server installed.<br>
+      You will also need the pdo_sqlite, pdo_mysql or pdo_pgsql extension, depending on which database you choose.<br>
+      Optionally, you can install:<br>
+      <ul>
+        <li>the gd extension for the captcha feature</li>
+        <li>the json extension for save/restore and a JavaScript helper for clients with enabled JavaScript.</li>
+        <li>a memcached server and the memcached extension and change the configuaration to use memcached. This will lessen the database load a bit.</li>
+        <li>a MySQL or PostgreSQL server to use as an external database instead of SQLite</li>
+        <li>the openssl extension for encryption of messages and notes in the database</li>
+      </ul>
+      When you have everything installed and use MySQL or PostgreSQL, you'll have to create a database and a user for the chat.<br>
       Then edit the configuration at the bottom of the script to reflect the appropriate database settings and to modify the chat settings the way you like them.<br>
       Then copy the script to your web-server directory and call the script in your browser with a parameter like this:<br>
       &nbsp; http://(server)/(script-name).php?action=setup<br>
